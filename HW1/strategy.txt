@@ -1,7 +1,22 @@
 //@version=5
-indicator(title="Smoothed Moving Average", shorttitle="SMMA", overlay=true, timeframe="", timeframe_gaps=true)
-len = input.int(7, minval=1, title="Length")
-src = input(close, title="Source")
-smma = 0.0
-smma := na(smma[1]) ? ta.sma(src, len) : (smma[1] * (len - 1) + src) / len
-plot(smma, color=#673AB7)
+strategy("MACD Strategy", overlay=true)
+fastLength = input(12)
+slowlength = input(26)
+MACDLength = input(9)
+
+length = input( 14 )
+overSold = input( 30 )
+overBought = input( 70 )
+price = close
+
+vrsi = ta.rsi(price, length)
+co = ta.crossover(vrsi, overSold)
+cu = ta.crossunder(vrsi, overBought)
+MACD = ta.ema(close, fastLength) - ta.ema(close, slowlength)
+aMACD = ta.ema(MACD, MACDLength)
+delta = MACD - aMACD
+if (ta.crossover(delta, 0) or  cu)
+	strategy.entry("MacdLE", strategy.long, comment="MacdLE")
+if (ta.crossunder(delta, 0) or  co)
+	strategy.entry("MacdSE", strategy.short, comment="MacdSE")
+//plot(strategy.equity, title="equity", color=color.red, linewidth=2, style=plot.style_areabr)
