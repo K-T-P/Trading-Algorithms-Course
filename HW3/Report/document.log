@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2024.10.7)  25 NOV 2024 01:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2024.10.7)  26 NOV 2024 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,20 +6,19 @@ entering extended mode
 (./document.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
-(g:/texlive/2021/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+(g:/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (g:/texlive/2021/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count175
-\c@chapter=\count176
-\c@section=\count177
-\c@subsection=\count178
-\c@subsubsection=\count179
-\c@paragraph=\count180
-\c@subparagraph=\count181
-\c@figure=\count182
-\c@table=\count183
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -37,9 +36,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (g:/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count184
-\Gm@cntv=\count185
-\c@Gm@tempcnt=\count186
+\Gm@cnth=\count183
+\Gm@cntv=\count184
+\c@Gm@tempcnt=\count185
 \Gm@bindingoffset=\dimen139
 \Gm@wd@mp=\dimen140
 \Gm@odd@mp=\dimen141
@@ -51,23 +50,23 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@dimlist=\toks16
 )
 (g:/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count187
+\lst@mode=\count186
 \lst@gtempboxa=\box47
 \lst@token=\toks17
-\lst@length=\count188
+\lst@length=\count187
 \lst@currlwidth=\dimen147
-\lst@column=\count189
-\lst@pos=\count190
+\lst@column=\count188
+\lst@pos=\count189
 \lst@lostspace=\dimen148
 \lst@width=\dimen149
-\lst@newlines=\count191
-\lst@lineno=\count192
+\lst@newlines=\count190
+\lst@lineno=\count191
 \lst@maxwidth=\dimen150
 
 (g:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count193
-\lst@skipnumbers=\count194
+\c@lstnumber=\count192
+\lst@skipnumbers=\count193
 \lst@framebox=\box48
 )
 (g:/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
@@ -77,7 +76,7 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 (g:/texlive/2021/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count195
+\c@float@type=\count194
 \float@exts=\toks18
 \float@box=\box49
 \@float@everytoks=\toks19
@@ -100,22 +99,22 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen157
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count196
-\c@continuedfloat=\count197
+\c@caption@flags=\count195
+\c@continuedfloat=\count196
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@KVtest=\count198
+\c@KVtest=\count197
 \sf@farskip=\skip49
 \sf@captopadj=\dimen158
 \sf@capskip=\skip50
 \sf@nearskip=\skip51
-\c@subfigure=\count199
-\c@subfigure@save=\count266
-\c@lofdepth=\count267
-\c@subtable=\count268
-\c@subtable@save=\count269
-\c@lotdepth=\count270
+\c@subfigure=\count198
+\c@subfigure@save=\count199
+\c@lofdepth=\count266
+\c@subtable=\count267
+\c@subtable@save=\count268
+\c@lotdepth=\count269
 \sf@top=\skip52
 \sf@bottom=\skip53
 )
@@ -150,7 +149,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
 )
-\XKV@depth=\count271
+\XKV@depth=\count270
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (g:/texlive/2021/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -184,12 +183,12 @@ File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 
 (g:/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count272
+\c@checkoddpage=\count271
 )
 (g:/texlive/2021/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box52
-\sift@deathcycles=\count273
+\sift@deathcycles=\count272
 \@vwid@loff=\dimen173
 \@vwid@roff=\dimen174
 ))
@@ -201,23 +200,23 @@ Persian language with 100 paragraphs of the Shahnameh
 Package: biditools 2020/05/13 v2 Programming tools for bidi package
 \@bidi@envbody=\toks22
 \@bidi@emptytoks=\toks23
-\bidi@poscount=\count274
+\bidi@poscount=\count273
 
 
 Package biditools Warning: Patching `\enddocument' failed on input line 916.
 
-\bidi@tempcountb=\count275
+\bidi@tempcountb=\count274
 \bidi@temptoksa=\toks24
 \bidi@temptoksb=\toks25
-\bidi@dummies=\count276
+\bidi@dummies=\count275
 \bidi@are@these@correct=\toks26
 \bidi@toks@lista=\toks27
 \bidi@toks@listb=\toks28
-\bidi@stack@length=\count277
+\bidi@stack@length=\count276
 \bidi@empty@stack=\toks29
-\bidi@looprepeat@depth=\count278
+\bidi@looprepeat@depth=\count277
 )
-\c@pte@count=\count279
+\c@pte@count=\count278
 ) (g:/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
@@ -262,14 +261,14 @@ Package: expl3 2021-02-18 L3 programming layer (loader)
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 
 (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count280
-\l__color_backend_stack_int=\count281
-\g__color_backend_stack_int=\count282
-\g__graphics_track_int=\count283
+\c__kernel_sys_dvipdfmx_version_int=\count279
+\l__color_backend_stack_int=\count280
+\g__color_backend_stack_int=\count281
+\g__graphics_track_int=\count282
 \l__pdf_internal_box=\box53
-\g__pdf_backend_object_int=\count284
-\g__pdf_backend_annotation_int=\count285
-\g__pdf_backend_link_int=\count286
+\g__pdf_backend_object_int=\count283
+\g__pdf_backend_annotation_int=\count284
+\g__pdf_backend_link_int=\count285
 ))
 (g:/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.sty
 (g:/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex)))
@@ -278,17 +277,17 @@ Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (g:/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count287
-\l__fontspec_language_int=\count288
-\l__fontspec_strnum_int=\count289
-\l__fontspec_tmp_int=\count290
-\l__fontspec_tmpa_int=\count291
-\l__fontspec_tmpb_int=\count292
-\l__fontspec_tmpc_int=\count293
-\l__fontspec_em_int=\count294
-\l__fontspec_emdef_int=\count295
-\l__fontspec_strong_int=\count296
-\l__fontspec_strongdef_int=\count297
+\l__fontspec_script_int=\count286
+\l__fontspec_language_int=\count287
+\l__fontspec_strnum_int=\count288
+\l__fontspec_tmp_int=\count289
+\l__fontspec_tmpa_int=\count290
+\l__fontspec_tmpb_int=\count291
+\l__fontspec_tmpc_int=\count292
+\l__fontspec_em_int=\count293
+\l__fontspec_emdef_int=\count294
+\l__fontspec_strong_int=\count295
+\l__fontspec_strongdef_int=\count296
 \l__fontspec_tmpa_dim=\dimen175
 \l__fontspec_tmpb_dim=\dimen176
 \l__fontspec_tmpc_dim=\dimen177
@@ -299,43 +298,43 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 (g:/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 (g:/texlive/2021/texmf-dist/tex/xelatex/xepersian/xepersian-persiancal.sty
 Package: xepersian-persiancal 2012/07/25 v0.2 provides Persian calendar
-\XePersian@i=\count298
-\XePersian@y=\count299
-\XePersian@m=\count300
-\XePersian@d=\count301
-\XePersian@latini=\count302
-\XePersian@persiani=\count303
-\XePersian@latinii=\count304
-\XePersian@persianii=\count305
-\XePersian@latiniii=\count306
-\XePersian@persianiii=\count307
-\XePersian@latiniv=\count308
-\XePersian@persianiv=\count309
-\XePersian@latinv=\count310
-\XePersian@persianv=\count311
-\XePersian@latinvi=\count312
-\XePersian@persianvi=\count313
-\XePersian@latinvii=\count314
-\XePersian@persianvii=\count315
-\XePersian@latinviii=\count316
-\XePersian@persianviii=\count317
-\XePersian@latinix=\count318
-\XePersian@persianix=\count319
-\XePersian@latinx=\count320
-\XePersian@persianx=\count321
-\XePersian@latinxi=\count322
-\XePersian@persianxi=\count323
-\XePersian@latinxii=\count324
-\XePersian@persianxii=\count325
-\XePersian@persianxiii=\count326
-\XePersian@temp=\count327
-\XePersian@temptwo=\count328
-\XePersian@tempthree=\count329
-\XePersian@yModHundred=\count330
-\XePersian@thirtytwo=\count331
-\XePersian@dn=\count332
-\XePersian@sn=\count333
-\XePersian@mminusone=\count334
+\XePersian@i=\count297
+\XePersian@y=\count298
+\XePersian@m=\count299
+\XePersian@d=\count300
+\XePersian@latini=\count301
+\XePersian@persiani=\count302
+\XePersian@latinii=\count303
+\XePersian@persianii=\count304
+\XePersian@latiniii=\count305
+\XePersian@persianiii=\count306
+\XePersian@latiniv=\count307
+\XePersian@persianiv=\count308
+\XePersian@latinv=\count309
+\XePersian@persianv=\count310
+\XePersian@latinvi=\count311
+\XePersian@persianvi=\count312
+\XePersian@latinvii=\count313
+\XePersian@persianvii=\count314
+\XePersian@latinviii=\count315
+\XePersian@persianviii=\count316
+\XePersian@latinix=\count317
+\XePersian@persianix=\count318
+\XePersian@latinx=\count319
+\XePersian@persianx=\count320
+\XePersian@latinxi=\count321
+\XePersian@persianxi=\count322
+\XePersian@latinxii=\count323
+\XePersian@persianxii=\count324
+\XePersian@persianxiii=\count325
+\XePersian@temp=\count326
+\XePersian@temptwo=\count327
+\XePersian@tempthree=\count328
+\XePersian@yModHundred=\count329
+\XePersian@thirtytwo=\count330
+\XePersian@dn=\count331
+\XePersian@sn=\count332
+\XePersian@mminusone=\count333
 )
 (g:/texlive/2021/texmf-dist/tex/xelatex/xepersian/xepersian-mathsdigitspec.sty
 Package: xepersian-mathsdigitspec 2018/12/16 v1.1.7 Unicode Persian maths digit
@@ -409,7 +408,7 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\c@abspage=\count335
+\c@abspage=\count334
 Package zref Info: New property: abspage on input line 66.
 )
 \@bidi@copyins@=\insert252
@@ -418,17 +417,17 @@ Package zref Info: New property: abspage on input line 66.
 File: latex-xetex-bidi.def 2019/03/03 v1.3.7 bidi adaptations for `latex.ltx' f
 or XeTeX engine
 \bidi@n@everypar=\toks30
-\bidi@column@check@number=\count336
+\bidi@column@check@number=\count335
 
 (g:/texlive/2021/texmf-dist/tex/xelatex/bidi/footnote-xetex-bidi.def
 File: footnote-xetex-bidi.def 2017/08/09 v1.1 bidi footnote macros for XeTeX en
 gine
-\c@footdir@label=\count337
+\c@footdir@label=\count336
 \footdir@toks=\toks31
 )
-(g:/texlive/2021/texmf-dist/tex/xelatex/bidi/report-xetex-bidi.def
-File: report-xetex-bidi.def 2017/06/09 v0.8 bidi adaptations for standard repor
-t class for XeTeX engine
+(g:/texlive/2021/texmf-dist/tex/xelatex/bidi/article-xetex-bidi.def
+File: article-xetex-bidi.def 2017/06/09 v0.6 bidi adaptations for standard arti
+cle class for XeTeX engine
 )
 (g:/texlive/2021/texmf-dist/tex/xelatex/bidi/caption-xetex-bidi.def
 File: caption-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for caption packa
@@ -473,7 +472,7 @@ r XeTeX engine
 File: loadingorder-xetex-bidi.def 2017/12/29 v0.97 making sure that bidi is the
  last package loaded
 )
-\bidi@digits=\count338
+\bidi@digits=\count337
 \bidi@digits@charclass=\XeTeXcharclass1
 \bidi@sepmark@charclass=\XeTeXcharclass2
 )
@@ -500,7 +499,7 @@ File: loadingorder-xetex-bidi.def 2017/12/29 v0.97 making sure that bidi is the
 * Primary author of xepersian package: Vafa Khalighi.
 * 
 ****************************************************
-\xepersian@tcl=\count339
+\xepersian@tcl=\count338
 \xepersian@ilg=\dimen178
 \xepersian@strutilg=\dimen179
 (g:/texlive/2021/texmf-dist/tex/xelatex/xepersian/loadingorder-xepersian.def
@@ -515,9 +514,9 @@ age
 File: listings-xepersian.def 2014/07/17 v0.3 bilingual captions for listings pa
 ckage
 )
-(g:/texlive/2021/texmf-dist/tex/xelatex/xepersian/report-xepersian.def
-File: report-xepersian.def 2010/07/25 v0.2 adaptations for standard report clas
-s
+(g:/texlive/2021/texmf-dist/tex/xelatex/xepersian/article-xepersian.def
+File: article-xepersian.def 2010/07/25 v0.2 adaptations for standard article cl
+ass
 )
 
 Package fontspec Info: Font family 'lmroman10-regular(0)' created for font
@@ -658,7 +657,7 @@ LaTeX Font Info:    ... okay on input line 17.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count340
+\c@lstlisting=\count339
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -670,13 +669,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 18.
-[1
-
-]
 LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/m/n' will be
 (Font)              scaled to size 17.28pt on input line 19.
 LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/b/n' will be
 (Font)              scaled to size 17.28pt on input line 19.
+(./document.toc
+LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+ [1
+
+])
+\tf@toc=\write3
+\openout3 = `document.toc'.
+
+LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 21.
 File: pic_1.png Graphic file (type bmp)
 <pic_1.png>
 File: pic_3.png Graphic file (type bmp)
@@ -684,47 +697,120 @@ File: pic_3.png Graphic file (type bmp)
 File: pic_2_1.png Graphic file (type bmp)
 <pic_2_1.png>
 LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 35.
+(Font)              scaled to size 10.0pt on input line 40.
 File: pic_2_2.png Graphic file (type bmp)
 <pic_2_2.png>
 File: pic_2_3.png Graphic file (type bmp)
 <pic_2_3.png>
 File: pic_2_4.png Graphic file (type bmp)
 <pic_2_4.png>
- [1]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 52.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 52.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 52.
-LaTeX Font Info:    Font shape `TU/XBNiloofar(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 58.
+ [2]
 File: pic_4.png Graphic file (type bmp)
 <pic_4.png>
- [2]
+ [3]
 File: pic_5.png Graphic file (type bmp)
 <pic_5.png>
- [3]
+ [4] [5]
 File: pic_6_1.png Graphic file (type bmp)
 <pic_6_1.png>
 File: pic_6_2.png Graphic file (type bmp)
 <pic_6_2.png>
 File: pic_7.png Graphic file (type bmp)
 <pic_7.png>
- [4]
+ [6]
 File: pic_8.png Graphic file (type bmp)
 <pic_8.png>
 File: pic_9.png Graphic file (type bmp)
 <pic_9.png>
- [5] [6] (./document.aux) ) 
+ [7]
+File: pic_10.png Graphic file (type bmp)
+<pic_10.png>
+ [8]
+Missing character: There is no ‌ (U+200C) in font [lmroman10-regular]/OT:script
+=latn;language=dflt;mapping=tex-text;!
+File: pic_11.png Graphic file (type bmp)
+<pic_11.png>
+File: pic_12.png Graphic file (type bmp)
+<pic_12.png>
+ [9]
+File: pic_13.png Graphic file (type bmp)
+<pic_13.png>
+ [10]
+File: pic_14.png Graphic file (type bmp)
+<pic_14.png>
+File: pic_16.png Graphic file (type bmp)
+<pic_16.png>
+ [11]
+File: pic_15.png Graphic file (type bmp)
+<pic_15.png>
+File: pic_17_1.png Graphic file (type bmp)
+<pic_17_1.png>
+File: pic_17_2.png Graphic file (type bmp)
+<pic_17_2.png>
+File: pic_17_3.png Graphic file (type bmp)
+<pic_17_3.png>
+File: pic_17_4.png Graphic file (type bmp)
+<pic_17_4.png>
+File: pic_18_1.png Graphic file (type bmp)
+<pic_18_1.png>
+File: pic_18_2.png Graphic file (type bmp)
+<pic_18_2.png>
+File: pic_18_3.png Graphic file (type bmp)
+<pic_18_3.png>
+File: pic_18_4.png Graphic file (type bmp)
+<pic_18_4.png>
+ [12] [13]
+File: pic_19.png Graphic file (type bmp)
+<pic_19.png>
+
+[14]
+File: pic_20.png Graphic file (type bmp)
+<pic_20.png>
+File: pic_21.png Graphic file (type bmp)
+<pic_21.png>
+ [15]
+File: pic_34.png Graphic file (type bmp)
+<pic_34.png>
+File: pic_35.png Graphic file (type bmp)
+<pic_35.png>
+File: pic_22.png Graphic file (type bmp)
+<pic_22.png>
+ [16]
+File: pic_23.png Graphic file (type bmp)
+<pic_23.png>
+ [17]
+File: pic_24.png Graphic file (type bmp)
+<pic_24.png>
+Missing character: There is no ‌ (U+200C) in font [lmroman10-regular]/OT:script
+=latn;language=dflt;mapping=tex-text;!
+File: pic_25.png Graphic file (type bmp)
+<pic_25.png>
+File: pic_26.png Graphic file (type bmp)
+<pic_26.png>
+ [18]
+File: pic_27.png Graphic file (type bmp)
+<pic_27.png>
+File: pic_28.png Graphic file (type bmp)
+<pic_28.png>
+File: pic_29.png Graphic file (type bmp)
+<pic_29.png>
+ [19]
+File: pic_30.png Graphic file (type bmp)
+<pic_30.png>
+File: pic_31.png Graphic file (type bmp)
+<pic_31.png>
+File: pic_32.png Graphic file (type bmp)
+<pic_32.png>
+File: pic_33.png Graphic file (type bmp)
+<pic_33.png>
+ [20] [21] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 10640 strings out of 476919
- 227499 string characters out of 5825424
- 832542 words of memory out of 5000000
- 30419 multiletter control sequences out of 15000+600000
- 407319 words of font info for 69 fonts, out of 8000000 for 9000
+ 10959 strings out of 476919
+ 231396 string characters out of 5825424
+ 836201 words of memory out of 5000000
+ 30732 multiletter control sequences out of 15000+600000
+ 407343 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  95i,11n,111p,1328b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on document.pdf (7 pages).
+Output written on document.pdf (21 pages).

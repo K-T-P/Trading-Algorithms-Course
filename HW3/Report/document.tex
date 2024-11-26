@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{article}
 \usepackage[top=3cm, bottom=2.5cm, left=2cm, right=2.5cm]{geometry}
 \usepackage{listings}
 \usepackage{float}
@@ -16,8 +16,12 @@
 \author{کورش تقی‌پور پاسدار}
 \begin{document}
 	\maketitle
-	\section{توضیح کد نوشته شده}
-	در ابتدا مطابق با تصویر زیر، کتابخانه‌ها و داده‌های مربوط به دو رمزارز \lr{Bitcoin} و \lr{Etherium} در دو \lr{interval} یک روزه و پنج روزه در بازه زمانی اول فوریه \lr{2023} تا اول فوریه \lr{2024} لود می‌شوند.
+	\tableofcontents
+	\section{بخش اول}
+	\subsection{\lr{Import Libraries and Data}}
+	در ابتدا مطابق با تصویر زیر، کتابخانه‌ها و داده‌های مربوط به دو رمزارز
+	\lr{Bitcoin} و \lr{Etherium} در دو \lr{interval} یک روزه و پنج روزه در بازه
+	زمانی اول فوریه \lr{2023} تا اول فوریه \lr{2024} لود می‌شوند.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{pic_1}
@@ -27,7 +31,8 @@
 		\centering
 		\includegraphics[scale=0.3]{pic_3}
 	\end{figure}
-	در تصاویر زیر نیز نمودار قیمت‌های رمزارز‌های \lr{BTC} و \lr{ETH} در دو بازه زمانی ۱ روزه و ۵ روزه نمایش داده می‌شود.
+	در تصاویر زیر نیز نمودار قیمت‌های رمزارز‌های \lr{BTC} و \lr{ETH} در دو بازه
+	زمانی ۱ روزه و ۵ روزه نمایش داده می‌شود.
 	\begin{figure}[H]
 		\centering
 		\subfloat[
@@ -46,85 +51,339 @@
 		نمودار قیمت رمزارز \lr{ETH} در بازه‌های زمانی ۵ روزه
 		]{\includegraphics[height=4cm]{pic_2_4}}
 	\end{figure}
-	در ادامه اندیکاتور \lr{Bollinger Bond} تعریف می‌شود. در این اندیکاتور، ما باند‌های بالایی،‌میانی و پایینی را تعریف و محاسبه می‌کنیم.
+	\subsection{\lr{Bollinger Band}}
+	\subsubsection{فرمول ریاضی}
+	در ادامه اندیکاتور \lr{Bollinger Band} تعریف می‌شود. در این اندیکاتور، ما
+	باند‌های بالایی،‌میانی و پایینی را تعریف و محاسبه می‌کنیم.
 	
 	باند بالایی از فرمول 
 	$$SMA + Std \times Correlation$$
 	و باند پایینی از فرمول
 	$$SMA - Std \times Correlation$$
-	محاسبه می‌شود. همچنین باند میانی با \lr{SMA} برابر است. حال برای محاسبه اندیکاتور \lr{Bollinger Bond}، 
+	محاسبه می‌شود. همچنین باند میانی با \lr{SMA} برابر است.
+	\subsubsection{پیاده‌سازی}
+	 حال برای محاسبه
+	اندیکاتور \lr{Bollinger Band}، 
 	ما ۴ تابع زیر را تعریف می‌کنیم:
-\begin{enumerate}
-	\item \textbf{SMA}
-	در این تابع، ما \lr{SMA} چند شمع قبلی را حساب می‌کنیم. تعداد این شمع‌ها توسط متغیر \lr{period} تعیین می‌شود.
-	\item  \textbf{STD}
-	در این تابع، ما انحراف معیار را محاسبه می‌کنیم.
-	\item \textbf{UpperBound}
-	در این تابع، ما با استفاده از توابع \lr{SMA} و \lr{STD} باند بالایی اندیکاتور را حساب می‌کنیم.
-	\item \textbf{LowerBound}
-	در این تابع، ما با استفاده از توابع \lr{SMA} و \lr{STD} باند پایینی را حساب می‌کنیم.
-\end{enumerate}
-در تصویر زیر، پیاده‌سازی اندیکاتور \lr{Bollinger Bond} نشان داده شده است.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pic_4}
-	\caption{اندیکاتور \lr{Bollinger Bond}}
-\end{figure}
-برای نمونه، در تصویر زیر اندیکاتور \lr{Bollinger Bond} برای قیمت \lr{Close} نمودار رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه نشان داده شده است.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pic_5}
-	\caption{اندیکاتور \lr{Bollinger Bond} برای رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه} 
-\end{figure}
-حال اندیکاتور \lr{Keltner Channel} تعریف می‌شود. در این اندیکاتور، ما کانال های بالایی و پایینی را بصورت زیر تعریف می‌کنیم.
-\begin{eqnarray*}
-	Upper Bound &=&SMA + ATR \times Correlation\\
-	Lower Bound &=&SMA - ATR \times Correlation
-\end{eqnarray*}
-همچنین مقدار \lr{ATR} بصورت زیر بدست می‌آید.
-\begin{eqnarray*}
-	ATR_{init} &=&\frac{\sum^{14}_{i=1} TR_{i}}{14}\\
-	ATR_{j+1} &=&\frac{TR_{j} + (n-1)\times ATR_{j}}{n}
-\end{eqnarray*}
-که در اینجا منظور از \lr{n}، تعداد روزهای دوره است.
-حال برای محاسبه باندهای بالایی و پایینی اندیکاتور \lr{Keltner Channel}، ما از توابع زیر استفاده می‌کنیم:
-\begin{enumerate}
-	\item \textbf{SMA} کارکردی مشابه تابع \lr{SMA} در اندیکاتور \lr{Bollinger Bound} دارد.
-	\item \textbf{return\_max} از میان مقادیر $High - Low$، $High - PrevClose$ و $Low - PrevClose$ بیشترین مقدار را انتخاب می‌کند.
-	\item \textbf{TR}  به محاسبه مقادیر $High - Low$، $High - PrevClose$ و $Low - PrevClose$ می‌پردازد.
-	\item \textbf{ATR} با استفاده از تابع \lr{TR} به محاسبه \lr{ATR} می‌پردازد.
-	\item \textbf{UpperBound} با استفاده از مقادیر \lr{sma} و \lr{atr} به محاسبه باند بالایی می‌پردازد.
-	\item \textbf{LowerBound} با استفاده از مقادیر \lr{sma} و \lr{atr} به محاسبه باند پایینی می‌پردازد.
-\end{enumerate}
-حال در تصویر زیر، پیاده‌سازی این اندیکاتور نشان داده شده است.
-\begin{figure}[H]
-	\centering
-	\subfloat[
-	قسمت اول تابع اندیکاتور \lr{Keltner Channel}
-	]{\includegraphics[height=6cm]{pic_6_1}}
-	\quad \quad
-	\subfloat[
-	ادامه تابع اندیکاتور \lr{Keltner Channel}
-	]{\includegraphics[height=6cm]{pic_6_2}}
-\end{figure}
-در تصویر زیر، اندیکاتور \lr{Keltner Channel} برای رمزارز \lr{BTC} با بازه‌های زمانی ۱ روزه محاسبه و ترسیم شده است.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pic_7}
-	\caption{اندیکاتور \lr{Keltner Channel} برای رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه}
-\end{figure}
-سپس به پیاده‌سازی \lr{RSI} می‌پردازیم. 
-\begin{eqnarray*}
-	RS &=& \frac{average\ gain}{average\ loss}\\
-	RSI &=& 100 - \frac{100}{1 + RS}
-\end{eqnarray*}
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pic_8}
-\end{figure}
-\lr{RSI} محاسبه شده برای رمزارز \lr{ETH} با بازه‌های زمانی ۱ روزه
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{pic_9}
-\end{figure}
+	\begin{enumerate}
+		\item \textbf{SMA}
+		در این تابع، ما \lr{SMA} چند شمع قبلی را حساب می‌کنیم. تعداد این شمع‌ها توسط
+		متغیر \lr{period} تعیین می‌شود.
+		\item  \textbf{STD}
+		در این تابع، ما انحراف معیار را محاسبه می‌کنیم.
+		\item \textbf{UpperBound}
+		در این تابع، ما با استفاده از توابع \lr{SMA} و \lr{STD} باند بالایی اندیکاتور
+		را حساب می‌کنیم.
+		\item \textbf{LowerBound}
+		در این تابع، ما با استفاده از توابع \lr{SMA} و \lr{STD} باند پایینی را حساب
+		می‌کنیم.
+	\end{enumerate}
+	در تصویر زیر، پیاده‌سازی اندیکاتور \lr{Bollinger Bond} نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_4}
+		\caption{اندیکاتور \lr{Bollinger Bond}}
+	\end{figure}
+	\subsubsection{تست پیاده‌سازی}
+	برای نمونه، در تصویر زیر اندیکاتور \lr{Bollinger Bond} برای قیمت \lr{Close}
+	نمودار رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_5}
+		\caption{اندیکاتور \lr{Bollinger Bond} برای رمزارز \lr{BTC} در بازه‌های زمانی ۱
+			روزه} 
+	\end{figure}
+	\subsection{\lr{Keltner Channel}}
+	\subsubsection{فرمول ریاضی}
+	حال اندیکاتور \lr{Keltner Channel} تعریف می‌شود. در این اندیکاتور، ما کانال های
+	بالایی و پایینی را بصورت زیر تعریف می‌کنیم.
+	\begin{eqnarray*}
+		Upper Bound &=&SMA + ATR \times Correlation\\
+		Lower Bound &=&SMA - ATR \times Correlation
+	\end{eqnarray*}
+	همچنین مقدار \lr{ATR} بصورت زیر بدست می‌آید.
+	\begin{eqnarray*}
+		ATR_{init} &=&\frac{\sum^{14}_{i=1} TR_{i}}{14}\\
+		ATR_{j+1} &=&\frac{TR_{j} + (n-1)\times ATR_{j}}{n}
+	\end{eqnarray*}
+	که در اینجا منظور از \lr{n}، تعداد روزهای دوره است.
+	\subsubsection{پیاده‌سازی}
+	حال برای محاسبه باندهای بالایی و پایینی اندیکاتور \lr{Keltner Channel}، ما از
+	توابع زیر استفاده می‌کنیم:
+	\begin{enumerate}
+		\item \textbf{\lr{SMA}} کارکردی مشابه تابع \lr{SMA} در اندیکاتور \lr{Bollinger
+			Bound} دارد.
+		\item \textbf{\lr{return\_max}} از میان مقادیر $High - Low$، $High - PrevClose$
+		و $Low - PrevClose$ بیشترین مقدار را انتخاب می‌کند.
+		\item \textbf{\lr{TR}}  به محاسبه مقادیر $High - Low$، $High - PrevClose$ و
+		$Low - PrevClose$ می‌پردازد.
+		\item \textbf{\lr{ATR}} با استفاده از تابع \lr{TR} به محاسبه \lr{ATR}
+		می‌پردازد.
+		\item \textbf{\lr{UpperBound}} با استفاده از مقادیر \lr{sma} و \lr{atr} به
+		محاسبه باند بالایی می‌پردازد.
+		\item \textbf{\lr{LowerBound}} با استفاده از مقادیر \lr{sma} و \lr{atr} به
+		محاسبه باند پایینی می‌پردازد.
+	\end{enumerate}
+	حال در تصویر زیر، پیاده‌سازی این اندیکاتور نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\subfloat[
+		قسمت اول تابع اندیکاتور \lr{Keltner Channel}
+		]{\includegraphics[height=6cm]{pic_6_1}}
+		\quad \quad
+		\subfloat[
+		ادامه تابع اندیکاتور \lr{Keltner Channel}
+		]{\includegraphics[height=6cm]{pic_6_2}}
+	\end{figure}
+	\subsubsection{تست پیاده‌سازی}
+	در تصویر زیر، اندیکاتور \lr{Keltner Channel} برای رمزارز \lr{BTC} با بازه‌های
+	زمانی ۱ روزه محاسبه و ترسیم شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_7}
+		\caption{اندیکاتور \lr{Keltner Channel} برای رمزارز \lr{BTC} در بازه‌های زمانی
+			۱ روزه}
+	\end{figure}
+	\subsection{\lr{RSI}}
+	سپس به پیاده‌سازی \lr{RSI} می‌پردازیم. 
+	\subsubsection{فرمول ریاضی}
+	\begin{eqnarray*}
+		RS &=& \frac{average\ gain}{average\ loss}\\
+		RSI &=& 100 - \frac{100}{1 + RS}
+	\end{eqnarray*}
+	\subsubsection{پیاده‌سازی}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_8}
+	\end{figure}
+	\subsubsection{تست پیاده‌سازی}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_9}
+		\caption{\lr{RSI} محاسبه شده برای رمزارز \lr{ETH} با بازه‌های زمانی ۱ روزه}
+	\end{figure}
+	\subsection{\lr{Backtest}}
+	حال به تشریح تابع \lr{backtest} می‌پردازیم.
+	
+	در این تابع، ما مقادیر \lr{stock}, \lr{init\_fund} و \lr{fund\_rate} را ورودی
+	می‌گیریم. \lr{stock} همان داده‌های قیمت رمزارز ما می‌باشد. \lr{init\_fund}  هم
+	سرمایه اولیه ما می‌باشد که با توجه به اشاره سوال به مقدار 1000، به طور پیشفرض
+	برابر با 1000 می‌باشد. \lr{fund\_rate} نیز یک عدد در بازه صفر تا یک می‌باشد و
+	اشاره دارد که در هر پوزیشن خرید یا فروش، چند درصد سرمایه را وارد کنیم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_10}
+		\caption{بخش اول تابع \lr{backtest}}
+	\end{figure}
+	در ابتدای تابع، تحلیل‌های اندیکاتورهای \lr{Bollinger Band}، \lr{Keltner Channel}
+	و \lr{RSI} را برروی قیمت رمزارز ورودی انجام می‌دهیم. سپس متغیرهای زیر را تعریف
+	می‌کنیم:
+	\begin{itemize}
+		\item \textbf{\lr{oversold}} مقدار \lr{oversold} برای اندیکاتور \lr{RSI}
+		\item \textbf{\lr{overbought}} مقدار \lr{overbought} برای اندیکاتور \lr{RSI}
+		\item \textbf{\lr{current\_share}} تعداد سهم‌های خریداری شده
+		\item \textbf{\lr{current\_fund}} سرمایه (نقدی) موجود
+		\item \textbf{\lr{buy\_holding}} آیا پوزیشن \lr{buy} باز داریم یا خیر
+		\item \textbf{\lr{sell\_holding}} آیا پوزیشن \lr{sell} باز داریم یا خیر
+		\item \textbf{\lr{sell\_price}} درصورت وجود پوزیشن \lr{sell} باز، قیمت سهم‌ها در زمان باز کردن پوزیشن چقدر بوده است.
+		\item \textbf{\lr{events\_list}} لیستی برای ذخیره تاریخچه خرید و فروش پوزیشن‌ها
+	\end{itemize}
+	در ابتدای حلقه، ما به قیمت رمزارز در آن روز و همچنین تحلیل اندیکاتورهای \lr{‌Bollinger Band}, \lr{Keltner Channel} و \lr{RSI} در آن روز را استخراج می‌کنیم. دقت شود در ابتدای تابع، ما تحلیل این اندیکاتورها را برای تمام زمان ها استخراج کردیم و در این قسمت ما به استخراج این اندیکاتورها برای امروز می‌پردازیم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_11}
+	\end{figure}
+	حال در این بخش ما به باز کردن پوزیشن \lr{buy} می‌پردازیم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_12}
+		\caption{بخش بازکردن پوزیشن \lr{Buy}}
+	\end{figure}
+	\subsubsection{قسمت بررسی شرط}
+	در قسمت شرط، ما شروط گفته شده در صورت سوال را بررسی می‌کنیم. همچنین بررسی می‌کنیم آیا پوزیشن \lr{buy} باز داریم تا از تکرار باز کردن پوزیشن جلوگیری کنیم. 
+	\subsubsection{بررسی و بستن پوزیشن \lr{sell} درصورت وجود}
+	داخل شرط بررسی می‌کنیم آیا پوزیشن \lr{sell} باز داریم یا خیر. درصورت باز بودن پوزیشن \lr{sell}،‌ پوزیشن \lr{sell} را می‌بندیم. به اینصورت که در ابتدا سرمایه‌ای را که برای بازکردن پوزیشن صرف کرده بودیم را برمی‌گردانیم. سپس اختلاف قیمت در زمان باز کردن پوزیشن \lr{sell} و بستن را حساب می‌کنیم تا درصورت افت قیمت، از روند نزولی بازار سود کسب کرده باشیم و درصورت صعود قیمت، از روند صعودی بازار با پوزیشن \lr{sell} ضرر کنیم. سپس تعداد سهم‌های موجود را صفر کرده و مقدار \lr{sell\_holding} را برابر با \lr{False} قرار می‌دهیم به این معنی که پوزیشن \lr{sell} باز نداریم.
+	\subsubsection{بازکردن پوزیشن \lr{buy}}
+	در ادامه، ما روز و نوع پوزیشن باز شده را در لیست \lr{events\_list} ذخیره می‌کنیم. سپس تعداد سهم‌های قابل خریداری را با توجه به مقدار سرمایه نقدی موجود و درصد سرمایه‌ قابل ورود (\lr{fund\_rate}) را محاسبه می‌کنیم. سپس هزینه آن را از سرمایه نقدی موجود کم می‌کنیم. همچنین متغیر \lr{buy\_holding} را برابر با \lr{True} قرار می‌دهیم تا بدانیم هم‌اکنون پوزیشن \lr{buy} باز داریم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_13}
+		\caption{باز کردن پوزیشن \lr{Sell}}
+	\end{figure}
+	حال به بخش بازکردن پوزیشن \lr{sell} می‌پردازیم.
+	\subsubsection{قسمت بررسی شرط}
+	در قسمت شرط، ما درابتدا بررسی می‌کنیم آیا پوزیشن \lr{sell} باز داریم یا خیر، تا بدینصورت از باز کردن مجدد پوزیشن \lr{Sell} خودداری کنیم. سپس بررسی می‌کنیم آیا قیمت سهم امروز از باند بالایی اندیکاتور \lr{Bollinger Band}  و \lr{Keltner Channel} و همچنین مقدار \lr{RSI} از مقدار \lr{overbought} بیشتر است یا خیر. درصورت صحیح بودن همه، وارد بدنه شرط می‌شویم.
+	\subsubsection{بستن پوزیشن‌های باز \lr{Buy}}
+	در ابتدا بررسی می‌کنیم آیا پوزیشن باز \lr{Buy} داریم یا خیر. درصورت وجود‌، با ضرب تعداد سهم‌ها در قیمت امروز سهم و صفر کردن تعداد سهم‌ها، پوزیشن‌های باز \lr{Buy} را می‌بندیم. همچنین متغیر \lr{buy\_holding} را برابر با \lr{False} قرار می‌دهیم به این معنی که دیگر پوزیشن باز \lr{Buy} نداریم.
+	\subsubsection{باز کردن پوزیشن \lr{Sell}}
+	در ابتدا روز و نوع پوزیشن باز شده را در \lr{events\_list} ذخیره می‌کنیم. سپس با توجه به سرمایه نقدی موجود، درصد ورود سرمایه و قیمت هر سهم، تعداد سهم‌های خریداری شده را محاسبه می‌کنیم. سپس قیمت آنها را از سرمایه‌ی نقدی کم می‌کنیم. همچنین متغیر \lr{sell\_holding} را برابر با\lr{True} قرار می‌دهیم تا بدانیم هم‌اکنون پوزیشن باز \lr{sell} داریم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_14}
+	\end{figure}
+	در انتهای هر حلقه، مقدار سرمایه آن روز (نقدی و سهم‌ها) را محاسبه کرده و ذخیره می‌کنیم. همچنین در انتهای تابع، مقدار سرمایه در هرروز و همچنین تاریخ‌های خرید و فروش‌ها را برمی‌گردانیم.
+	\subsection{نتایج \lr{Backtest}}
+	در کد زیر، تابع \lr{backtest} را برای هر یک از رمزارزهای \lr{BTC} و \lr{ETH} در دو بازه زمانی ۱ روزه و ۵ روزه نشان می‌دهد. همچنین $fund rate = 1$
+	نشان می‌دهد ما با تمام سرمایه وارد می‌شویم.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_16}
+	\end{figure}
+	نتیجه در تصویر زیر ترسیم شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{pic_15}
+	\end{figure}
+	همچنین در کدهای زیر، زمان‌های خرید و فروش در هر رمزارزی نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\subfloat[
+		رسم زمان‌های خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[scale=0.5]{pic_17_1}}
+		\quad \quad
+		\subfloat[
+		رسم زمان‌های خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[scale=0.5]{pic_17_2}}
+		\quad \quad
+		\subfloat[
+		رسم زمان‌های خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[scale=0.5]{pic_17_3}}
+		\quad \quad
+		\subfloat[
+		رسم زمان‌های خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[scale=0.5]{pic_17_4}}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\subfloat[
+		زمان‌های خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[height=4cm]{pic_18_1}}
+		\quad \quad
+		\subfloat[
+		زمان‌های خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[height=4cm]{pic_18_2}}
+		\quad \quad
+		\subfloat[
+		زمان‌های خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[height=4cm]{pic_18_3}}
+		\quad \quad
+		\subfloat[
+		زمان‌های خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[height=4cm]{pic_18_4}}
+	\end{figure}
+	قابل به ذکر است که ممکن است پوزیشنی در یک نمودار باز شود و تا انتهای نمودار به دلیل عدم فراهم شدن شرایط لازم، بسته نشود. به همین دلیل، بستن پوزیشن‌ها در انتهای نمودار درنظر گرفته شود.
+	\subsection{معیارهای ارزیابی مختلف}
+	در کد زیر، پیاده‌سازی معیارهای \lr{Net Profit}, \lr{Sharpe Ratio}, \lr{Sortino Ratio} و \lr{Max Drawdown} نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{pic_19}
+		\caption{کد معیارهای \lr{Net Profit}, \lr{Sharpe Ratio}, \lr{Sortino Ratio}, \lr{Max Drawdown}}
+	\end{figure}
+	در کد زیر، حاصل این معیارها برای رمزارزها نشان داده شده است.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_20}
+		\caption{کد نشان دادن نتایج}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_21}
+		\caption{نتایج معیارها}
+	\end{figure}
+	\subsection{تغییر در استراتژی}
+	در این بخش، برخی موارد را تغییر دادیم تا استراتژی خود را بهبود بخشیم.
+	\subsubsection{تغییر در مقدار \lr{Overbought} و \lr{Oversold}}
+	ابتدا مقادیر \lr{overbought} و \lr{oversold} را به ترتیب به \lr{75} و \lr{25} تغییر دادیم و نمودارها بصورت زیر تغییر کردند.
+	\begin{figure}[H]
+		\centering
+		\subfloat[
+		تغییر میزان سرمایه
+		]{\includegraphics[height=5cm]{pic_34}}
+		\subfloat[
+		نتایج متریک‌های مختلف
+		]{\includegraphics[height=5cm]{pic_35}}
+	\end{figure}
+	\section{بخش دوم}
+	\subsection{تابع \lr{Backtest}}
+	در این تابع، ما استراتژی خواسته شده در بخش دوم را پیاده‌سازی می‌کنیم. لازم به ذکر است که اندیکاتور \lr{Bollinger Band} در قسمت قبلی پیاده‌سازی شده است و از همان پیاده‌سازی استفاده می‌کنیم.
+	\subsubsection{بخش ابتدایی تابع}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_22}
+		\caption{بخش ابتدایی تابع \lr{Backtest}}
+	\end{figure}
+	این تابع به عنوان ورودی، نمودار قیمت رمزارز، سرمایه اولیه و درصد ورود سرمایه را دریافت می‌کند که این موارد مشابه موارد متناظر در تابع \lr{backtest} قبلی است. همچنین تعدادی متغیر تعریف شده است که در زیر تشریح می‌شوند.
+	\begin{itemize}
+		\item \textbf{bollinger\_analysis} تحلیل اندیکاتور \lr{Bollinger Band} برروی نمودار قیمت رمزارز
+		\item \textbf{current\_fund} سرمایه فعلی
+		\item \textbf{current\_share} تعداد سهم‌های خریداری شده
+		\item \textbf{sell\_holding} آیا پوزیشن \lr{sell} باز وجود دارد یا خیر
+		\item \textbf{sell\_signal} سیگنال فروش
+		\item \textbf{buy\_holding} آیا پوزیشن \lr{buy} باز وجود دارد یا خیر؟
+		\item \textbf{buy\_signal} سیگنال خرید
+		\item \textbf{sell\_price} قیمت سهم هنگام بازکردن پوزیشن فروش
+		\item \textbf{events\_list} لیست زمان‌های بازکردن پوزیشن‌های خرید و فروش
+	\end{itemize}
+	\subsubsection{باز کردن پوزیشن \lr{Sell}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_23}
+		\caption{بخش باز کردن پوزیشن فروش}
+	\end{figure}
+	در این بخش در شرط، ابتدا وجود سیگنال پوزیشن فروش و همچنین عدم وجود پوزیشن باز فروش را بررسی می‌کنیم. پس از ورود به بدنه شرط، سیگنال فروش (\lr{sell\_signal}) را برابر با \lr{False} قرار می‌دهیم. به این معنی که سیگنال فروش دریافت شده است. سپس در بخش شرط داخلی، بررسی می‌کنیم آیا پوزیشن \lr{buy} باز وجود دارد یا خیر. درصورت وجود، سهام‌ها را به قیمت روز به فروش می‌رسانیم. سپس متغیر \lr{sell\_holding} را برابر با \lr{True} قرار می‌دهیم تا بگوییم پوزیشن باز فروش وجود دارد. در ادامه، تعداد سهم‌های ممکن را با توجه به سرمایه نقدی موجود، درصد ورود سرمایه و قیمت هر سهم محاسبه می‌کنیم. سپس قیمت سهم‌ها را از سرمایه نقدی موجود کم می‌کنیم. همچنین قیمت هر سهم را نیز ذخیره می‌کنیم تا در هنگام بستن پوزیشن فروش، بتوانیم سود و زیان را نیز محاسبه کنیم.در آخر نیز تاریخ بازکردن پوزیشن به همراه نوع پوزیشن را ذخیره می‌کنیم.
+	\subsubsection{باز کردن پوزیشن \lr{Buy}}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_24}
+		\caption{بخش باز کردن پوزیشن خرید}
+	\end{figure}
+	این بخش نیز مشابه بخش قبلی می‌باشد.
+	\subsubsection{بررسی سیگنال‌های خرید یا فروش}
+	در این بخش، سیگنال‌های خرید و فروش با توجه به اندیکاتور \lr{‌Bollinger Band} تعیین می‌شوند. همچنین این بخش در آخر حلقه آمده است تا این سیگنال‌ها برای روز بعد اعمال شوند.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_25}
+		\caption{بررسی سیگنال خرید و فروش}
+	\end{figure}
+	در آخر نیز سرمایه هرروز محاسبه می‌شود. همچنین کل سرمایه در هرروز و همچنین تاریخ خرید و فروش‌ها نیز برگردانده می‌شوند.
+	\subsubsection{اجرای تابع \lr{Backtest}}
+	در این بخش، تابع \lr{backtest} اجرا شده و نتایج نشان داده می‌شوند.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_26}
+		\caption{اجرای تابع \lr{backtest}}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_27}
+		\caption{کد ترسیم نتایج}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_28}
+		\caption{نتابج ترسیم شده}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{pic_29}
+		\caption{نتایج متریک های مختلف}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\subfloat[
+		نمودار تاریخ خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[scale=0.3]{pic_30}}
+		\quad \quad
+		\subfloat[
+		نمودار تاریخ خرید و فروش برای رمزارز \lr{BTC} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[scale=0.3]{pic_31}}
+		\quad \quad
+		\subfloat[
+		نمودار تاریخ خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۱ روزه
+		]{\includegraphics[scale=0.3]{pic_32}}
+		\quad \quad
+		\subfloat[
+		نمودار تاریخ خرید و فروش برای رمزارز \lr{ETH} در بازه‌های زمانی ۵ روزه
+		]{\includegraphics[scale=0.3]{pic_33}}
+	\end{figure}
 \end{document}
