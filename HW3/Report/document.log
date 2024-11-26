@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2024.10.7)  26 NOV 2024 15:11
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2024.10.7)  26 NOV 2024 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -773,28 +773,70 @@ File: pic_34.png Graphic file (type bmp)
 <pic_34.png>
 File: pic_35.png Graphic file (type bmp)
 <pic_35.png>
+File: pic_49.png Graphic file (type bmp)
+<pic_49.png>
+File: pic_50.png Graphic file (type bmp)
+<pic_50.png>
+File: pic_51.png Graphic file (type bmp)
+<pic_51.png>
+File: pic_52.png Graphic file (type bmp)
+<pic_52.png>
+ [16]
+File: pic_36.png Graphic file (type bmp)
+<pic_36.png>
+File: pic_37.png Graphic file (type bmp)
+<pic_37.png>
+File: pic_38.png Graphic file (type bmp)
+<pic_38.png>
+File: pic_39.png Graphic file (type bmp)
+<pic_39.png>
+File: pic_40.png Graphic file (type bmp)
+<pic_40.png>
+File: pic_41.png Graphic file (type bmp)
+<pic_41.png>
+File: pic_42.png Graphic file (type bmp)
+<pic_42.png>
+ [17] [18]
+File: pic_43.png Graphic file (type bmp)
+<pic_43.png>
+File: pic_44.png Graphic file (type bmp)
+<pic_44.png>
+File: pic_45.png Graphic file (type bmp)
+<pic_45.png>
+File: pic_46.png Graphic file (type bmp)
+<pic_46.png>
+File: pic_47.png Graphic file (type bmp)
+<pic_47.png>
+File: pic_48.png Graphic file (type bmp)
+<pic_48.png>
+
+Overfull \hbox (1.28926pt too wide) in paragraph at lines 407--408
+[]\TU/XBNiloofar(0)/m/n/12 سوددهی بیشتری برروی نمودارهایی با بازه زمانی ۵ روزه 
+دارد، هرچند برای نمودارهایی با بازه‌های زمانی ۱ روزه، استراتژی‌های[]
+ []
+
+[19]
 File: pic_22.png Graphic file (type bmp)
 <pic_22.png>
- [16]
 File: pic_23.png Graphic file (type bmp)
 <pic_23.png>
- [17]
+ [20]
 File: pic_24.png Graphic file (type bmp)
 <pic_24.png>
 Missing character: There is no ‌ (U+200C) in font [lmroman10-regular]/OT:script
 =latn;language=dflt;mapping=tex-text;!
 File: pic_25.png Graphic file (type bmp)
 <pic_25.png>
+ [21]
 File: pic_26.png Graphic file (type bmp)
 <pic_26.png>
- [18]
 File: pic_27.png Graphic file (type bmp)
 <pic_27.png>
 File: pic_28.png Graphic file (type bmp)
 <pic_28.png>
 File: pic_29.png Graphic file (type bmp)
 <pic_29.png>
- [19]
+ [22]
 File: pic_30.png Graphic file (type bmp)
 <pic_30.png>
 File: pic_31.png Graphic file (type bmp)
@@ -803,14 +845,14 @@ File: pic_32.png Graphic file (type bmp)
 <pic_32.png>
 File: pic_33.png Graphic file (type bmp)
 <pic_33.png>
- [20] [21] (./document.aux) ) 
+ [23] [24] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 10959 strings out of 476919
- 231396 string characters out of 5825424
+ 11129 strings out of 476919
+ 233266 string characters out of 5825424
  836201 words of memory out of 5000000
- 30732 multiletter control sequences out of 15000+600000
+ 30902 multiletter control sequences out of 15000+600000
  407343 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  95i,11n,111p,1328b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on document.pdf (21 pages).
+Output written on document.pdf (24 pages).

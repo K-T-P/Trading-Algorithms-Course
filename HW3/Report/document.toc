@@ -6,7 +6,7 @@
 \contentsline {subsubsection}{\numberline {1.2.3}تست پیاده‌سازی}{4}{}%
 \contentsline {subsection}{\numberline {1.3}\lr {Keltner Channel}}{5}{}%
 \contentsline {subsubsection}{\numberline {1.3.1}فرمول ریاضی}{5}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}پیاده‌سازی}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}پیاده‌سازی}{6}{}%
 \contentsline {subsubsection}{\numberline {1.3.3}تست پیاده‌سازی}{6}{}%
 \contentsline {subsection}{\numberline {1.4}\lr {RSI}}{7}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}فرمول ریاضی}{7}{}%
@@ -21,12 +21,17 @@
 \contentsline {subsubsection}{\numberline {1.5.6}باز کردن پوزیشن \lr {Sell}}{11}{}%
 \contentsline {subsection}{\numberline {1.6}نتایج \lr {Backtest}}{11}{}%
 \contentsline {subsection}{\numberline {1.7}معیارهای ارزیابی مختلف}{14}{}%
+\contentsline {subsubsection}{\numberline {1.7.1}پیاده‌سازی و نتایج}{14}{}%
+\contentsline {subsubsection}{\numberline {1.7.2}بررسی نتایج}{16}{}%
 \contentsline {subsection}{\numberline {1.8}تغییر در استراتژی}{16}{}%
 \contentsline {subsubsection}{\numberline {1.8.1}تغییر در مقدار \lr {Overbought} و \lr {Oversold}}{16}{}%
-\contentsline {section}{\numberline {2}بخش دوم}{16}{}%
-\contentsline {subsection}{\numberline {2.1}تابع \lr {Backtest}}{16}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}بخش ابتدایی تابع}{17}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}باز کردن پوزیشن \lr {Sell}}{17}{}%
-\contentsline {subsubsection}{\numberline {2.1.3}باز کردن پوزیشن \lr {Buy}}{18}{}%
-\contentsline {subsubsection}{\numberline {2.1.4}بررسی سیگنال‌های خرید یا فروش}{18}{}%
-\contentsline {subsubsection}{\numberline {2.1.5}اجرای تابع \lr {Backtest}}{19}{}%
+\contentsline {subsubsection}{\numberline {1.8.2}حذف \lr {RSI} و اختیاری کردن یکی از اندیکاتورها}{17}{}%
+\contentsline {subsubsection}{\numberline {1.8.3}تغییر در مقدار بازه زمانی و ضریب}{19}{}%
+\contentsline {section}{\numberline {2}بخش دوم}{20}{}%
+\contentsline {subsection}{\numberline {2.1}تابع \lr {Backtest}}{20}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}بخش ابتدایی تابع}{20}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}باز کردن پوزیشن \lr {Sell}}{21}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}باز کردن پوزیشن \lr {Buy}}{21}{}%
+\contentsline {subsubsection}{\numberline {2.1.4}بررسی سیگنال‌های خرید یا فروش}{21}{}%
+\contentsline {subsubsection}{\numberline {2.1.5}اجرای تابع \lr {Backtest}}{22}{}%
+\contentsline {subsubsection}{\numberline {2.1.6}بررسی نتایج متریک‌ها}{24}{}%
